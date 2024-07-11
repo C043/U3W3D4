@@ -10,7 +10,6 @@ function App() {
   return (
     <BrowserRouter>
       <SpaceNav />
-
       <Container>
         <Routes>
           <Route path="/" element={<Home />} />

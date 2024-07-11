@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Spinner } from "react-bootstrap";
+import { Row, Spinner } from "react-bootstrap";
 import { News } from "../interfaces/iNews";
 import SingleNews from "./SingleNews";
 
