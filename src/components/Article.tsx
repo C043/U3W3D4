@@ -53,8 +53,10 @@ const Article = () => {
           />
           <hr />
         </Col>
-        <Col>
-          <p className="mb-5">{article?.summary}</p>
+        <Col className="mb-5">
+          <p>Published: {article?.published_at.substring(0, 10)}</p>
+          <p>{article?.summary}</p>
+          <a href={article?.url}>Read More.</a>
         </Col>
       </Row>
     </>
