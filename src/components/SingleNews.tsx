@@ -14,8 +14,9 @@ function SingleNews({ news }: SingleNewsProp) {
         <Card.Img variant="top" src={news.image_url} className="fixed-height" />
         <Card.Body>
           <Card.Title className="text-truncate">{news.title}</Card.Title>
+          <p>{news.published_at.slice(0, 10)}</p>
           <Card.Text className="line-clamp-3">{news.summary}</Card.Text>
-          <NavLink to={"/article/" + news.id} className="btn btn-dark">
+          <NavLink to={"/article/" + news.id} className="btn btn-warning">
             Go to article
           </NavLink>
         </Card.Body>

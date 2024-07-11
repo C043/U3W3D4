@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import SpaceNav from "./SpaceNav";
 import { Container, Row, Spinner } from "react-bootstrap";
 import { News } from "../interfaces/iNews";
 import SingleNews from "./SingleNews";
@@ -29,12 +28,18 @@ const Home = () => {
   }, []);
 
   return (
-    <Container>
+    <>
       <h1 className="my-3">Latest News</h1>
       <Row className="mb-5 g-2">
-        {isLoading ? <Spinner variant="primary" /> : news.map((news: News) => <SingleNews key={news.id} news={news} />)}
+        {isLoading ? (
+          <div className="d-flex justify-content-center">
+            <Spinner variant="warning" />
+          </div>
+        ) : (
+          news.map((news: News) => <SingleNews key={news.id} news={news} />)
+        )}
       </Row>
-    </Container>
+    </>
   );
 };
 

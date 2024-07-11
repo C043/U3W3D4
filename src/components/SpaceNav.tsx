@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const SpaceNav = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary mb-3">
       <Container>
         <Navbar.Brand href="#home">Space X News</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
