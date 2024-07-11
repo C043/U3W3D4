@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Article } from "../interfaces/iArticle";
 import { Col, Row, Spinner } from "react-bootstrap";
 
@@ -8,6 +8,7 @@ const Article = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const params = useParams();
+  const navigate = useNavigate();
 
   const fetchArticle = async () => {
     try {
@@ -20,6 +21,7 @@ const Article = () => {
       }
     } catch (error) {
       console.log(error);
+      navigate("/error");
     } finally {
       setIsLoading(false);
     }

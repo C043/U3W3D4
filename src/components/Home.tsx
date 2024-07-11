@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import { Row, Spinner } from "react-bootstrap";
 import { News } from "../interfaces/iNews";
 import SingleNews from "./SingleNews";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [news, setNews] = useState<News[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   const fetchNews = async () => {
     try {
@@ -18,6 +21,7 @@ const Home = () => {
       }
     } catch (error) {
       console.log(error);
+      navigate("/error");
     } finally {
       setIsLoading(false);
     }

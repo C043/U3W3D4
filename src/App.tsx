@@ -6,6 +6,7 @@ import SpaceNav from "./components/SpaceNav";
 import Article from "./components/Article";
 import { Container } from "react-bootstrap";
 import SpaceFooter from "./components/SpaceFooter";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/article/:id" element={<Article />} />
-          <Route path="*" />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Container>
       <SpaceFooter />
