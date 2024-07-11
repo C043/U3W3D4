@@ -29,19 +29,12 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <SpaceNav />
-      <Container>
-        <h1 className="my-3">Latest News</h1>
-        <Row className="mb-5 g-2">
-          {isLoading ? (
-            <Spinner variant="primary" />
-          ) : (
-            news.map((news: News) => <SingleNews key={news.id} news={news} />)
-          )}
-        </Row>
-      </Container>
-    </>
+    <Container>
+      <h1 className="my-3">Latest News</h1>
+      <Row className="mb-5 g-2">
+        {isLoading ? <Spinner variant="primary" /> : news.map((news: News) => <SingleNews key={news.id} news={news} />)}
+      </Row>
+    </Container>
   );
 };
 
