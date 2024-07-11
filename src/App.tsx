@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import SpaceNav from "./components/SpaceNav";
 import Article from "./components/Article";
 import { Container } from "react-bootstrap";
+import SpaceFooter from "./components/SpaceFooter";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="*" />
         </Routes>
       </Container>
+      <SpaceFooter />
     </BrowserRouter>
   );
 }

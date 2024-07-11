@@ -30,18 +30,29 @@ const Article = () => {
   }, []);
 
   return isLoading ? (
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center my-4">
       <Spinner variant="warning" />
     </div>
   ) : (
     <>
       <h1 className="mb-3">{article?.title}</h1>
       <Row>
-        <Col xs="12" md="4">
-          <img src={article?.image_url} alt="article-image" style={{ width: "100%" }} />
+        <Col xs="12">
+          <img
+            src={article?.image_url}
+            alt="article-image"
+            style={{
+              width: "100%",
+              height: "500px",
+              objectFit: "cover",
+              boxShadow: "5px 5px 15px 1px rgba(0,0,0,0.27)",
+            }}
+            className="mb-3"
+          />
+          <hr />
         </Col>
         <Col>
-          <p>{article?.summary}</p>
+          <p className="mb-5">{article?.summary}</p>
         </Col>
       </Row>
     </>
